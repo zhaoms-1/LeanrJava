@@ -3,6 +3,7 @@ package com.zms.learn.schedule;
 import com.zms.learn.enums.MessageEnum;
 import com.zms.learn.modle.bo.message.CompleteMessage;
 import com.zms.learn.service.ReceiveMessage;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +18,8 @@ public class StationSchedule {
     /**
      * 1分钟执行一次
      */
-    @Scheduled(fixedDelay = 5, timeUnit = TimeUnit.SECONDS)
+    @Scheduled(fixedRate = 50)
+    @Async
     void sendMessage() {
         CompleteMessage message = CompleteMessage.builder()
                 .requestId("111")

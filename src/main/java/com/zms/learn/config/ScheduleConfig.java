@@ -1,33 +1,20 @@
 package com.zms.learn.config;
 
-import com.zms.learn.util.ThreadMdcUtil;
-import org.slf4j.MDC;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-import org.springframework.stereotype.Component;
 
-import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
-import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 
-@Component
+@Configuration
 public class ScheduleConfig {
 
     @Bean("schedule")
+    @Primary
     public Executor myAsync() {
-        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor() {
-            @Override
-            public <T> Future<T> submit(Callable<T> task) {
-                // 传入线程池之前先复制当前线程的MDC
-                return super.submit(ThreadMdcUtil.wrap(task, MDC.getCopyOfContextMap()));
-            }
-
-            @Override
-            public void execute(Runnable task) {
-                super.execute(ThreadMdcUtil.wrap(task, MDC.getCopyOfContextMap()));
-            }
-        };
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         //最大线程数
         executor.setMaxPoolSize(100);
         //核心线程数
@@ -48,7 +35,6 @@ public class ScheduleConfig {
          */
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
         //线程初始化
-        executor.initialize();
         return executor;
     }
 }
