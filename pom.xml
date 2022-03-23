@@ -99,6 +99,13 @@
             <version>1.16.3</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <artifactId>mariadb-java-client</artifactId>
+            <groupId>org.mariadb.jdbc</groupId>
+            <version>2.7.3</version>
+            <scope>test</scope>
+        </dependency>
         <!-- testcontainers -->
 
         <!-- mybatis-plus -->
@@ -106,6 +113,24 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
             <version>3.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.3.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-autoconfigure</artifactId>
+            <version>2.1.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.database-rider</groupId>
+            <artifactId>rider-core</artifactId>
+            <version>1.31.0</version>
+            <scope>test</scope>
         </dependency>
         <!-- mybatis-plus -->
 
