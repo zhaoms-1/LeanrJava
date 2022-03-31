@@ -4,6 +4,7 @@ import com.zms.learn.enums.MessageEnum;
 import com.zms.learn.modle.bo.message.CompleteMessage;
 import com.zms.learn.service.message.ReceiveMessage;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -16,7 +17,7 @@ public class StationSchedule {
     /**
      * 1分钟执行一次
      */
-//    @Scheduled(fixedRate = 50)
+    @Scheduled(fixedRate = 1000 * 5)
     @Async("schedule")
     void sendMessage() {
         CompleteMessage message = CompleteMessage.builder()

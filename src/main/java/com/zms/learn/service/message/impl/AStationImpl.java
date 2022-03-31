@@ -2,7 +2,6 @@ package com.zms.learn.service.message.impl;
 
 import com.zms.learn.modle.bo.message.BaseMessage;
 import com.zms.learn.modle.bo.message.CompleteMessage;
-import com.zms.learn.service.message.impl.AbstractInboundBaseReceiveMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
