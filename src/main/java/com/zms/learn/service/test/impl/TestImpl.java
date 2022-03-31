@@ -1,6 +1,6 @@
-package com.zms.learn.service.impl;
+package com.zms.learn.service.test.impl;
 
-import com.zms.learn.service.Test;
+import com.zms.learn.service.test.Test;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

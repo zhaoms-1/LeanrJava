@@ -1,7 +1,7 @@
-package com.zms.learn.service.impl;
+package com.zms.learn.service.message.impl;
 
 import com.zms.learn.modle.bo.message.BaseMessage;
-import com.zms.learn.service.ReceiveMessage;
+import com.zms.learn.service.message.ReceiveMessage;
 
 
 public abstract class AbstractInboundBaseReceiveMessage implements ReceiveMessage {

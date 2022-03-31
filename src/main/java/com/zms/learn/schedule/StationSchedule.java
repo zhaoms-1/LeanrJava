@@ -2,13 +2,11 @@ package com.zms.learn.schedule;
 
 import com.zms.learn.enums.MessageEnum;
 import com.zms.learn.modle.bo.message.CompleteMessage;
-import com.zms.learn.service.ReceiveMessage;
+import com.zms.learn.service.message.ReceiveMessage;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.util.concurrent.TimeUnit;
 
 @Component
 public class StationSchedule {

@@ -2,7 +2,8 @@ package com.zms.learn.service;
 
 
 import com.zms.learn.common.DatabaseBaseTest;
-import com.zms.learn.service.impl.ProjectServiceImpl;
+import com.zms.learn.service.projectService.impl.ProjectServiceImpl;
+import com.zms.learn.service.projectService.ProjectService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

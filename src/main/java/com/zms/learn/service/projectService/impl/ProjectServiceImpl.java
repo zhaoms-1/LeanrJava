@@ -1,8 +1,8 @@
-package com.zms.learn.service.impl;
+package com.zms.learn.service.projectService.impl;
 
 import com.zms.learn.dao.ProjectTaskMapper;
 import com.zms.learn.modle.entity.project.ProjectTaskDO;
-import com.zms.learn.service.ProjectService;
+import com.zms.learn.service.projectService.ProjectService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

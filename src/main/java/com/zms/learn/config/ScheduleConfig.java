@@ -1,15 +1,22 @@
 package com.zms.learn.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.Executor;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.atomic.AtomicBoolean;
 
+@Slf4j
 @Configuration
 public class ScheduleConfig {
+
+    private AtomicBoolean faTaskExecutorDumped = new AtomicBoolean(false);
+
 
     @Bean("schedule")
     @Primary
@@ -33,7 +40,18 @@ public class ScheduleConfig {
          * DiscardPolicy()：直接丢弃。
          * DiscardOldestPolicy()：丢弃队列中最老的任务。
          */
-        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
+        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy() {
+            @Override
+            public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
+                // 防止频繁输出日志
+                if (faTaskExecutorDumped.compareAndExchange(false, true)) {
+                    log.warn("The thread pool is schedule full");
+                    throw new RejectedExecutionException("Task " + r.toString() +
+                            " rejected from " +
+                            e.toString());
+                }
+            }
+        });
         //线程初始化
         return executor;
     }

@@ -1,4 +1,4 @@
-package com.zms.learn.service;
+package com.zms.learn.service.message;
 
 import com.zms.learn.modle.bo.message.BaseMessage;
 
