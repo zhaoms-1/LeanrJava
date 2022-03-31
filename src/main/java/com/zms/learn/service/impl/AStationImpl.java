@@ -2,8 +2,9 @@ package com.zms.learn.service.impl;
 
 import com.zms.learn.modle.bo.message.BaseMessage;
 import com.zms.learn.modle.bo.message.CompleteMessage;
+import com.zms.learn.modle.event.TaskSendEvent;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.annotation.Async;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,5 +28,11 @@ public class AStationImpl extends AbstractInboundBaseReceiveMessage {
     @Override
     public String getStation() {
         return null;
+    }
+
+
+    @EventListener(classes = TaskSendEvent.class)
+    public void TaskListener(){
+        log.debug("测试事件");
     }
 }

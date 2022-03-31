@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: learn
+  datasource:
+    url: jdbc:mysql://${server.ip}:3306/testA?createDatabaseIfNotExist=true&autoReconnect=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1234567890///
+server:
+  port: 8080
+  ip: 10.122.94.96
+
+
+

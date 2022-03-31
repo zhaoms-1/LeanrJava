@@ -18,8 +18,8 @@ public class StationSchedule {
     /**
      * 1分钟执行一次
      */
-    @Scheduled(fixedRate = 50)
-    @Async
+//    @Scheduled(fixedRate = 50)
+    @Async("schedule")
     void sendMessage() {
         CompleteMessage message = CompleteMessage.builder()
                 .requestId("111")

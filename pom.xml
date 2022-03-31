@@ -114,11 +114,11 @@
             <artifactId>mybatis-plus</artifactId>
             <version>3.5.1</version>
         </dependency>
+
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.3.2</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -132,7 +132,20 @@
             <version>1.31.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.docker-java</groupId>
+            <artifactId>docker-java-api</artifactId>
+            <version>3.2.12</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- mybatis-plus -->
+
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+        </dependency>
 
 
     </dependencies>
