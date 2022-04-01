@@ -147,6 +147,12 @@
             <version>8.0.28</version>
         </dependency>
 
+        <!-- data check -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
 
     </dependencies>
 

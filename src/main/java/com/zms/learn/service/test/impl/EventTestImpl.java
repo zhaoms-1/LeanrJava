@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
 public class EventTestImpl implements EventTest {
     @EventListener(classes = TaskSendEvent.class)
     @Override
-    public void eventTest() {
-        log.debug("测试事件");
+    public void eventTest(TaskSendEvent taskSendEvent) {
+        log.debug("测试事件:{}", taskSendEvent.getEventDTO().getMsg());
+        log.debug("测试事件:{}", taskSendEvent.getEventDTO().getStation());
 
     }
 }
