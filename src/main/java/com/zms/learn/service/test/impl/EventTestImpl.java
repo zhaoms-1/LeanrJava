@@ -16,4 +16,12 @@ public class EventTestImpl implements EventTest {
         log.debug("测试事件:{}", taskSendEvent.getEventDTO().getStation());
 
     }
+
+    private void testRebase(){
+        log.info("rebase1");
+        log.info("rebase2");
+        log.info("rebase3");
+        log.info("rebase4");
+
+    }
 }
