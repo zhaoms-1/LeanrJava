@@ -29,8 +29,6 @@ public class Response implements Serializable {
 
     private Object data;
 
-    private List list;
-
     public static Response succ() {
         return new Response();
     }

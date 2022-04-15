@@ -11,21 +11,21 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-@Slf4j
 @Configuration
+@Slf4j
 public class ScheduleConfig {
 
-    private AtomicBoolean faTaskExecutorDumped = new AtomicBoolean(false);
+    private AtomicBoolean tag = new AtomicBoolean(false);
 
 
     @Bean("schedule")
     @Primary
-    public Executor myAsync() {
+    public Executor async() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         //最大线程数
-        executor.setMaxPoolSize(100);
+        executor.setMaxPoolSize(50);
         //核心线程数
-        executor.setCorePoolSize(10);
+        executor.setCorePoolSize(5);
         //任务队列的大小
         executor.setQueueCapacity(10);
         //线程前缀名
@@ -44,7 +44,7 @@ public class ScheduleConfig {
             @Override
             public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
                 // 防止频繁输出日志
-                if (faTaskExecutorDumped.compareAndExchange(false, true)) {
+                if (tag.compareAndExchange(false, true)) {
                     log.warn("The thread pool is schedule full");
                     throw new RejectedExecutionException("Task " + r.toString() +
                             " rejected from " +

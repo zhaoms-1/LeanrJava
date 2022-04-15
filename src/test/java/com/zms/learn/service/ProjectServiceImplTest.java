@@ -15,6 +15,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.annotation.Resource;
+import java.util.concurrent.ThreadLocalRandom;
 
 @ActiveProfiles("mariadb")
 @SpringBootTest
@@ -32,5 +33,7 @@ public class ProjectServiceImplTest extends DatabaseBaseTest {
         int i = projectService.addProject();
         Assertions.assertEquals(i, 1);
     }
+
+
 
 }

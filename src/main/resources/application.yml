@@ -8,6 +8,8 @@ spring:
 server:
   port: 8080
   ip: 10.122.94.96
-
+logging:
+  config:classpath: logs/logback-spring.xml
+  levels: info
 
 
