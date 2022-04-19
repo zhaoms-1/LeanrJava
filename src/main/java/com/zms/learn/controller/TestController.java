@@ -1,5 +1,7 @@
 package com.zms.learn.controller;
 
+import com.zms.learn.enums.ExceptionCodeEnum;
+import com.zms.learn.exception.TestException;
 import com.zms.learn.modle.Response;
 import com.zms.learn.modle.dto.EventDTO;
 import com.zms.learn.modle.dto.TestDTO;
@@ -37,4 +39,14 @@ public class TestController {
         log.info("dataCheck:{}", testDTO);
         return Response.succ(testDTO);
     }
+
+    @GetMapping("/exception")
+    Response testException(@RequestParam int i) {
+        if (i == 1) {
+            throw new TestException(ExceptionCodeEnum.INSERT_ERROR);
+        }
+        int z = 1 / 0;
+        return Response.succ();
+    }
+
 }

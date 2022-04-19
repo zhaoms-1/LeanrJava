@@ -1,11 +1,10 @@
 package com.zms.learn.modle;
 
-import com.zms.learn.enums.SuccessCodeEnum;
+import com.zms.learn.enums.ExceptionCodeEnum;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * The type Response.
@@ -15,17 +14,17 @@ import java.util.List;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Response implements Serializable {
+public class Response<T> implements Serializable {
     private static final long serialVersionUID = 10L;
 
     @Builder.Default
-    private Integer returnCode = SuccessCodeEnum.SUCCESS.getValue();
+    private Integer returnCode = ExceptionCodeEnum.SUCCESS.getExceptionCode();
 
     @Builder.Default
     private String returnMsg = "success";
 
     @Builder.Default
-    private String returnUserMsg = SuccessCodeEnum.SUCCESS.getDesc();
+    private String returnUserMsg = ExceptionCodeEnum.SUCCESS.getExceptionMsg();
 
     private Object data;
 
@@ -38,6 +37,14 @@ public class Response implements Serializable {
         response.setData(data);
         return response;
     }
+
+    public static Response error(ExceptionCodeEnum exceptionCodeEnum) {
+        return Response.builder()
+                .returnCode(exceptionCodeEnum.getExceptionCode())
+                .returnMsg(exceptionCodeEnum.getExceptionMsg())
+                .returnUserMsg(exceptionCodeEnum.getExceptionMsg()).build();
+    }
+
 
     /**
      * Sets error.

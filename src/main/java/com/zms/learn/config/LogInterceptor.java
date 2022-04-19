@@ -13,7 +13,7 @@ import java.util.UUID;
 @Slf4j
 @Component
 public class LogInterceptor implements HandlerInterceptor {
-    private static final String TRACE_ID = "traceId";
+    public static final String TRACE_ID = "traceId";
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
