@@ -1,4 +1,4 @@
-package com.zms.learn.enums;
+package com.zms.learn.constant.enums;
 
 import lombok.Getter;
 

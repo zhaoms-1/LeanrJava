@@ -1,6 +1,6 @@
 package com.zms.learn.service.test.impl;
 
-import com.zms.learn.modle.event.TaskSendEvent;
+import com.zms.learn.event.TaskSendEvent;
 import com.zms.learn.service.test.EventTest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;

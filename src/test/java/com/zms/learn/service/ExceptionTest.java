@@ -1,7 +1,7 @@
 package com.zms.learn.service;
 
-import com.zms.learn.enums.ExceptionCodeEnum;
-import com.zms.learn.exception.TestException;
+import com.zms.learn.constant.enums.ExceptionCodeEnum;
+import com.zms.learn.constant.exception.TestException;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

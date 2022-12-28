@@ -1,4 +1,4 @@
-package com.zms.learn.modle.event;
+package com.zms.learn.event;
 
 import com.zms.learn.modle.dto.EventDTO;
 import org.springframework.context.ApplicationEvent;

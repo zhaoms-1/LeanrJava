@@ -1,6 +1,6 @@
 package com.zms.learn.modle.bo.message;
 
-import com.zms.learn.enums.MessageEnum;
+import com.zms.learn.constant.enums.MessageEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

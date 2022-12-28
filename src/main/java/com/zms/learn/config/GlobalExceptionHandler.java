@@ -1,6 +1,6 @@
 package com.zms.learn.config;
 
-import com.zms.learn.enums.ExceptionCodeEnum;
+import com.zms.learn.constant.enums.ExceptionCodeEnum;
 import com.zms.learn.modle.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;

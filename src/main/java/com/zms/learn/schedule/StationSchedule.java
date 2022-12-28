@@ -1,6 +1,6 @@
 package com.zms.learn.schedule;
 
-import com.zms.learn.enums.MessageEnum;
+import com.zms.learn.constant.enums.MessageEnum;
 import com.zms.learn.modle.bo.message.CompleteMessage;
 import com.zms.learn.service.message.ReceiveMessage;
 import org.springframework.scheduling.annotation.Async;

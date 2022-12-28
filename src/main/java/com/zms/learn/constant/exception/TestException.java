@@ -1,6 +1,6 @@
-package com.zms.learn.exception;
+package com.zms.learn.constant.exception;
 
-import com.zms.learn.enums.ExceptionCodeEnum;
+import com.zms.learn.constant.enums.ExceptionCodeEnum;
 import org.apache.commons.lang3.StringUtils;
 
 public class TestException extends RuntimeException {

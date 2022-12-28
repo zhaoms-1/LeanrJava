@@ -1,6 +1,6 @@
 package com.zms.learn.modle;
 
-import com.zms.learn.enums.ExceptionCodeEnum;
+import com.zms.learn.constant.enums.ExceptionCodeEnum;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
